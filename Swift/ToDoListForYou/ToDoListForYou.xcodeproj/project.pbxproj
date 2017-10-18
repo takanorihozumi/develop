@@ -17,6 +17,7 @@
 		821AA6E51F96FA5E002EDDD6 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821AA6DB1F96FA5D002EDDD6 /* 4.jpg */; };
 		821AA6E61F96FA5E002EDDD6 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821AA6DC1F96FA5E002EDDD6 /* 6.jpg */; };
 		821AA6E71F96FA5E002EDDD6 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821AA6DD1F96FA5E002EDDD6 /* 8.jpg */; };
+		821AA6EB1F97028A002EDDD6 /* delete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 821AA6EA1F97028A002EDDD6 /* delete.mp3 */; };
 		82DE50C01F94DDCB00FCBB02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DE50BF1F94DDCB00FCBB02 /* AppDelegate.swift */; };
 		82DE50C21F94DDCB00FCBB02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DE50C11F94DDCB00FCBB02 /* ViewController.swift */; };
 		82DE50C51F94DDCB00FCBB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DE50C31F94DDCB00FCBB02 /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 		821AA6DB1F96FA5D002EDDD6 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = "../../../../../../Downloads/Swift4Images&SampleCode/Swift4Wunderlist1/4.jpg"; sourceTree = "<group>"; };
 		821AA6DC1F96FA5E002EDDD6 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.jpg; path = "../../../../../../Downloads/Swift4Images&SampleCode/Swift4Wunderlist1/6.jpg"; sourceTree = "<group>"; };
 		821AA6DD1F96FA5E002EDDD6 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 8.jpg; path = "../../../../../../Downloads/Swift4Images&SampleCode/Swift4Wunderlist1/8.jpg"; sourceTree = "<group>"; };
+		821AA6EA1F97028A002EDDD6 /* delete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = delete.mp3; path = ../../../../../../Downloads/delete.mp3; sourceTree = "<group>"; };
+		821AA6ED1F970741002EDDD6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		82DE50BC1F94DDCB00FCBB02 /* ToDoListForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DE50BF1F94DDCB00FCBB02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82DE50C11F94DDCB00FCBB02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,11 +62,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		821AA6EC1F970740002EDDD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				821AA6ED1F970741002EDDD6 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82DE50B31F94DDCB00FCBB02 = {
 			isa = PBXGroup;
 			children = (
 				82DE50BE1F94DDCB00FCBB02 /* ToDoListForYou */,
 				82DE50BD1F94DDCB00FCBB02 /* Products */,
+				821AA6EC1F970740002EDDD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +90,7 @@
 		82DE50BE1F94DDCB00FCBB02 /* ToDoListForYou */ = {
 			isa = PBXGroup;
 			children = (
+				821AA6EA1F97028A002EDDD6 /* delete.mp3 */,
 				821AA6D91F96FA5D002EDDD6 /* 0.jpg */,
 				821AA6D51F96FA5D002EDDD6 /* 1.jpg */,
 				821AA6D61F96FA5D002EDDD6 /* 2.jpg */,
@@ -162,6 +175,7 @@
 				821AA6E51F96FA5E002EDDD6 /* 4.jpg in Resources */,
 				821AA6E31F96FA5E002EDDD6 /* 0.jpg in Resources */,
 				821AA6E01F96FA5E002EDDD6 /* 2.jpg in Resources */,
+				821AA6EB1F97028A002EDDD6 /* delete.mp3 in Resources */,
 				821AA6E21F96FA5E002EDDD6 /* 5.jpg in Resources */,
 				82DE50CA1F94DDCB00FCBB02 /* LaunchScreen.storyboard in Resources */,
 				821AA6E71F96FA5E002EDDD6 /* 8.jpg in Resources */,

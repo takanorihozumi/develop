@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
+    var audioPlayer: AVAudioPlayer!
+    
     @IBOutlet var backImageView: UIImageView!
     @IBOutlet var backView: UIView!
     @IBOutlet var tableView: UITableView!
@@ -130,12 +133,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             titleArray.remove(at: indexPath.row)
             
             UserDefaults.standard.set(titleArray, forKey: "array")
-            
+            startMusic()
             tableView.reloadData()
         } else if editingStyle == .insert {
             // TO DO
         }
         
+    }
+    
+    func startMusic() {
+        if let url = Bundle.main.url(forResource: "delete", withExtension: "mp3") {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            } catch {
+                audioPlayer = nil
+            }
+        } else {
+            //error
+        }
     }
     
     override func didReceiveMemoryWarning() {
