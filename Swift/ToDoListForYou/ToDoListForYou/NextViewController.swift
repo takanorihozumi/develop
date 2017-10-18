@@ -8,7 +8,9 @@
 
 import UIKit
 
-class NextViewController: UIViewController, UITextViewDelegate {
+class NextViewController: UIViewController, UITextViewDelegate,UIDocumentInteractionControllerDelegate {
+    
+    lazy private var documentInteractionController = UIDocumentInteractionController()
 
     var selectedNumber = 0
     
@@ -41,7 +43,7 @@ class NextViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func takeScreenShot {
+    func takeScreenShot (){
         
         let rect = CGRect(x: textView.frame.origin.x, y: textView.frame.origin.y, width: textView.frame.width, height: textView.frame.height)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
@@ -52,6 +54,21 @@ class NextViewController: UIViewController, UITextViewDelegate {
     }
 
     @IBAction func shareLINE(_ sender: Any) {
+        
+        takeScreenShot()
+        
+        //timingを遅らせる
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+         
+            let pastBoard: UIPasteboard = UIPasteboard.general
+            
+            pastBoard.setData(UIImageJPEGRepresentation(self.screenShotImage, 0.75)!, forPasteboardType: "public.png")
+            
+            let lineUrlString: String = String(format: "line://msg/image/%@", pastBoard.name as CVarArg)
+            
+            UIApplication.shared.open(NSURL(string: lineUrlString)! as URL)
+            
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

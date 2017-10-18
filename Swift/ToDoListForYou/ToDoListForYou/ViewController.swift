@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        textField.delegate = self
         //角を丸くする
         backView.layer.cornerRadius = 2.0
         
@@ -74,6 +74,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return true
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 107
     }
 
     //delegate method1
