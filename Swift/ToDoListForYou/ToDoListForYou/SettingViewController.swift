@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import Photos
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var sv: UIScrollView!
     @IBOutlet var backImageView: UIImageView!
+    var isAlbumImage = false
     
     var vc:UIView = UIView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         vc.frame = CGRect(x: 0, y: 0, width: 800, height: 80)
         
         for i in 0..<10{
@@ -33,6 +36,25 @@ class SettingViewController: UIViewController {
         //scrollViewにつける
         sv.addSubview(vc)
         sv.contentSize = vc.bounds.size
+        
+        //ユーザーにカメラの使用許可をだす
+        PHPhotoLibrary.requestAuthorization { (status) in
+            
+            switch(status){
+            case .authorized:
+                print("authorized")
+                
+            case .denied:
+                print("denied")
+                
+            case .notDetermined:
+                print("notDetermined")
+                
+            case .restricted:
+                print("restricted")
+            }
+            
+        }
     }
     
     func selectImage(sender:UIButton) {
@@ -41,6 +63,11 @@ class SettingViewController: UIViewController {
         
         //buttonのtag情報をアプリ内に保存
         UserDefaults.standard.set(String(sender.tag), forKey: "image")
+        isAlbumImage = false
+        if let controller = self.presentingViewController as? ViewController {
+            controller.isAlbumImage = false
+        }
+        
     }
 
     @IBAction func back(_ sender: Any) {
@@ -51,7 +78,42 @@ class SettingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func getImageFromAlbum(_ sender: Any) {
+        let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.photoLibrary
+        // アルバムが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+        }
+    }
+    
+    //imagepickerのdelegateMethod
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let picker = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            saveImage(image: picker)
+            
+            let imageDate:NSData = UserDefaults.standard.object(forKey: "imageData") as! NSData
+            backImageView.image = UIImage(data:imageDate as Data)
+            isAlbumImage = true
+            if let controller = self.presentingViewController as? ViewController {
+                controller.isAlbumImage = true
+                print("aaa")
+            }
+        }
+        
+        //アルバム画面を閉じる処理
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func saveImage (image: UIImage){
+        UserDefaults.standard.set(UIImageJPEGRepresentation(image, 0.8), forKey: "imageData")
+        
+    }
+    
     /*
     // MARK: - Navigation
 

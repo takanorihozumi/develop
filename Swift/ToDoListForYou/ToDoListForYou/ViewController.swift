@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var backView: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
+    var isAlbumImage = false
     
     //TO DOのタイトル格納用array
     var titleArray = [String]()
@@ -47,11 +48,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
         //画像を取得
-        if UserDefaults.standard.object(forKey: "image") != nil {
-            let numberString = UserDefaults.standard.object(forKey: "image")
-            
-            //TO DO 拡張子指定してるから注意
-            backImageView.image = UIImage(named: numberString as! String + ".jpg")
+        if (isAlbumImage){
+            if UserDefaults.standard.object(forKey: "imageDate") != nil{
+                let imageDate:NSData = UserDefaults.standard.object(forKey: "imageData") as! NSData
+                backImageView.image = UIImage(data:imageDate as Data)
+            }
+           
+        }else{
+            if UserDefaults.standard.object(forKey: "image") != nil {
+                let numberString = UserDefaults.standard.object(forKey: "image")
+                backImageView.image = UIImage(named: numberString as! String + ".jpg")
+            }
         }
         
         tableView.reloadData()
