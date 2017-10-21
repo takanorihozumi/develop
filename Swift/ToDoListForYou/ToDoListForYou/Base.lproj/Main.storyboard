@@ -212,7 +212,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNz-RY-4s1">
-                                            <rect key="frame" x="242" y="191" width="115" height="49"/>
+                                            <rect key="frame" x="252" y="277" width="115" height="49"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="Save-Button-PNG-Photos"/>
                                             <connections>
@@ -228,6 +228,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ioW-vm-ONG"/>
                     <connections>
+                        <outlet property="dateTextField" destination="4rg-8g-5Bv" id="nQO-zI-YmC"/>
                         <outlet property="textView" destination="LKY-7M-nhJ" id="k1E-X7-8eM"/>
                     </connections>
                 </viewController>

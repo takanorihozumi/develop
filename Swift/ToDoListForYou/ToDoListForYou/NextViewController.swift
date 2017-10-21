@@ -8,7 +8,9 @@
 
 import UIKit
 
-class NextViewController: UIViewController, UITextViewDelegate,UIDocumentInteractionControllerDelegate {
+class NextViewController: UIViewController, UITextViewDelegate,UIDocumentInteractionControllerDelegate,UITextFieldDelegate {
+    
+    @IBOutlet var dateTextField: UITextField!
     
     lazy private var documentInteractionController = UIDocumentInteractionController()
 
@@ -22,7 +24,17 @@ class NextViewController: UIViewController, UITextViewDelegate,UIDocumentInterac
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
-
+        dateTextField.delegate = self
+        
+        let datePicker = UIDatePicker()
+        
+        // ②日本の日付表示形式にする
+        datePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
+        datePicker.datePickerMode = UIDatePickerMode.date
+        
+        datePicker.addTarget(self, action: #selector(NextViewController.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        
+        dateTextField.inputView = datePicker
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,8 +50,11 @@ class NextViewController: UIViewController, UITextViewDelegate,UIDocumentInterac
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         //keyboadが表示されているなら
         if textView.isFirstResponder{
-            //close
             textView.resignFirstResponder()
+            
+        }
+        if dateTextField.isFirstResponder{
+            dateTextField.resignFirstResponder()
         }
     }
     
@@ -70,6 +85,17 @@ class NextViewController: UIViewController, UITextViewDelegate,UIDocumentInterac
             
         }
     }
+    
+    func datePickerValueChanged(sender: UIDatePicker) {
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        formatter.dateFormat = "yyyy年MM月dd日"
+        dateTextField.text = formatter.string(from: sender.date)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
