@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    
+    @IBOutlet var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -45,6 +48,26 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            //撮影したイメージを背景に適用
+            imageView.image = pickedImage
+            
+            //撮影完了じに画面遷移
+            performSegue(withIdentifier: "next", sender: nil)
+            //次の画面に値を渡す
+        }
+        
+        //カメラ画面(アルバム画面)を閉じる処理
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "next" {
+            let subVC:EditViewController = segue.destination as! EditViewController
+            subVC.willEdit = imageView.image!
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

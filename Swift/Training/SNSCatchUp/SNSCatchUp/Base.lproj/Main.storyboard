@@ -57,10 +57,39 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qdJ-ac-X6b"/>
+                    <connections>
+                        <outlet property="imageView" destination="lsQ-jL-ayj" id="VgS-4d-ttq"/>
+                        <segue destination="uYN-92-hbQ" kind="push" identifier="next" id="qK6-f6-uEC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260" y="133.5832083958021"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="enQ-EI-lys">
+            <objects>
+                <viewController storyboardIdentifier="Next" id="uYN-92-hbQ" customClass="EditViewController" customModule="SNSCatchUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHA-34-KIi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USB-nV-OI4">
+                                <rect key="frame" x="0.0" y="63" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pDg-1q-Zvn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zRm-9g-zfn"/>
+                    <connections>
+                        <outlet property="editImageVIew" destination="USB-nV-OI4" id="O4y-by-1jB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kTo-7J-eFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fPE-GV-Ars">
@@ -78,7 +107,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jms-HT-kYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-385" y="134"/>
+            <point key="canvasLocation" x="-505" y="134"/>
         </scene>
     </scenes>
     <resources>

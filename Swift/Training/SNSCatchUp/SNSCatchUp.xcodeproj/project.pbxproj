@@ -12,6 +12,7 @@
 		820506741F9C2F4200F15784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820506721F9C2F4200F15784 /* Main.storyboard */; };
 		820506761F9C2F4200F15784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820506751F9C2F4200F15784 /* Assets.xcassets */; };
 		820506791F9C2F4200F15784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820506771F9C2F4200F15784 /* LaunchScreen.storyboard */; };
+		82CC09071F9C45F000DC88E6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC09061F9C45F000DC88E6 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		820506751F9C2F4200F15784 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		820506781F9C2F4200F15784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8205067A1F9C2F4200F15784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82CC09061F9C45F000DC88E6 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				8205066E1F9C2F4200F15784 /* AppDelegate.swift */,
 				820506701F9C2F4200F15784 /* ViewController.swift */,
+				82CC09061F9C45F000DC88E6 /* EditViewController.swift */,
 				820506721F9C2F4200F15784 /* Main.storyboard */,
 				820506751F9C2F4200F15784 /* Assets.xcassets */,
 				820506771F9C2F4200F15784 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				820506711F9C2F4200F15784 /* ViewController.swift in Sources */,
 				8205066F1F9C2F4200F15784 /* AppDelegate.swift in Sources */,
+				82CC09071F9C45F000DC88E6 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
