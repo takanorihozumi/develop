@@ -12,5 +12,6 @@ http://takanori5.hatenablog.com/
 
 以下は、あまり関係ないですが、、<br>
 Mynaverまとめオススメ記事<br>
-https://matome.naver.jp/odai/2136965117014565101　<br>
+https://matome.naver.jp/odai/2136965117014565101
+<br>
 https://matome.naver.jp/odai/2136965735616254901
