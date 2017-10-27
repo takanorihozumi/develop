@@ -65,7 +65,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "next" {
             let subVC:EditViewController = segue.destination as! EditViewController
-            subVC.willEdit = imageView.image!
+            subVC.willEditImage = imageView.image!
         }
     }
     
