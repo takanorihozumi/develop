@@ -66,6 +66,9 @@ class EditViewController: UIViewController {
         }
     }
     
+    //画面遷移（画像を渡して）
+    
+    
     func filter1(){
         
         // image が 元画像のUIImage
@@ -118,7 +121,7 @@ class EditViewController: UIViewController {
     
     func filter4(){
         
-        let ciImage:CIImage = CIImage(image:editImageView.image!)!;
+        let ciImage:CIImage = CIImage(image:editImageVIew.image!)!;
         let ciFilter:CIFilter = CIFilter(name: "CIColorControls" )!
         ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
         ciFilter.setValue(1.0, forKey: "inputSaturation")
@@ -128,14 +131,14 @@ class EditViewController: UIViewController {
         let cgimg:CGImage = ciContext.createCGImage(ciFilter.outputImage!, from:ciFilter.outputImage!.extent)!
         //image2に加工後のUIImage
         let image2:UIImage = UIImage(cgImage: cgimg, scale: 1.0, orientation:UIImageOrientation.up)
-        editImageView.image = image2
+        editImageVIew.image = image2
         
     }
     
     
     func filter5(){
         
-        let ciImage:CIImage = CIImage(image:editImageView.image!)!;
+        let ciImage:CIImage = CIImage(image:editImageVIew.image!)!;
         let ciFilter:CIFilter = CIFilter(name: "CIToneCurve" )!
         ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
         ciFilter.setValue(CIVector(x: 0.0, y: 0.0), forKey: "inputPoint0")
@@ -147,12 +150,12 @@ class EditViewController: UIViewController {
         let cgimg:CGImage = ciContext.createCGImage(ciFilter.outputImage!, from:ciFilter.outputImage!.extent)!
         //image2に加工後のUIImage
         let image2:UIImage = UIImage(cgImage: cgimg, scale: 1.0, orientation:UIImageOrientation.up)
-        editImageView.image = image2
+        editImageVIew.image = image2
         
     }
     
     func filter6(){
-        let ciImage:CIImage = CIImage(image:editImageView.image!)!;
+        let ciImage:CIImage = CIImage(image:editImageVIew.image!)!;
         let ciFilter:CIFilter = CIFilter(name: "CIHueAdjust" )!
         ciFilter.setValue(ciImage, forKey: kCIInputImageKey)
         ciFilter.setValue(3.14, forKey: "inputAngle")
@@ -160,7 +163,7 @@ class EditViewController: UIViewController {
         let cgimg:CGImage = ciContext.createCGImage(ciFilter.outputImage!, from:ciFilter.outputImage!.extent)!
         //image2に加工後のUIImage
         let image2:UIImage = UIImage(cgImage: cgimg, scale: 1.0, orientation:UIImageOrientation.up)
-        editImageView.image = image2
+        editImageVIew.image = image2
         
         
     }
