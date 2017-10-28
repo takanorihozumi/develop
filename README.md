@@ -1,6 +1,6 @@
 # develop
 
-主にSwift学習に利用しているbranchです。<br>
+主にSwiftとRubyの学習に利用しているbranchです。<br>
 trainingフォルダに<br>
 ネットを漁りまくり学習した単機能を<br>
 配置しています。<br>
