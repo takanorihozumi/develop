@@ -21,6 +21,14 @@ class SNSViewController: UIViewController {
         endImageView.image = endImage
     }
 
+    @IBAction func saveImage(_ sender: Any) {
+        
+    }
+    
+    @IBAction func shareSNS(_ sender: Any) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
