@@ -54,8 +54,16 @@ class SNSViewController: UIViewController {
                                                             (action:UIAlertAction!) -> Void in
                                                             self.postTwitter()
         })
+        
+        let lineAction:UIAlertAction = UIAlertAction(title: "LINE",
+                                                        style: UIAlertActionStyle.default,
+                                                        handler:{
+                                                            (action:UIAlertAction!) -> Void in
+                                                            self.postLINE()
+        })
         alertController.addAction(facebookAction)
         alertController.addAction(twitterAction)
+        alertController.addAction(lineAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
@@ -81,6 +89,20 @@ class SNSViewController: UIViewController {
         composeController.add(endImageView.image)
         // SLComposeViewController を表示する(投稿画面が立ち上がる)
         self.present(composeController, animated: true, completion: nil)
+    }
+    
+    //LINEへ投稿
+    func postLINE(){
+        let pastBoard: UIPasteboard = UIPasteboard.general
+        
+        pastBoard.setData(UIImageJPEGRepresentation(endImageView.image!, 0.75)!, forPasteboardType: "public.png")
+        pastBoard.setValue(textView.text, forPasteboardType:textView.text)
+        
+        let lineUrlString: String = String(format: "line://msg/image/%@", pastBoard.name as CVarArg)
+        
+        
+        UIApplication.shared.open(NSURL(string: lineUrlString)! as URL)
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
