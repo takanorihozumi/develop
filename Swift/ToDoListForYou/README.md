@@ -1,4 +1,5 @@
-【WIP：作業中（builedは通る状態README.md）】
+【WIP：作業中（builedは通る状態）】
+
 TODOLISTFORYOUは、背景や効果音などを自分好みにカスタマイズすることが可能な
 シンプルなTODO管理アプリです。
 
