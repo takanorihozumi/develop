@@ -1,4 +1,9 @@
 == README
+Ruby on Rails、 HTML、CSS、 Javascript、Stripe、Heroku を組み合わせて、<br>
+webサイトを作成・公開するところまでを一通り自分でやってみるためのプロジェクト<br>
+UIはAirBnb風。<br>
+実現できることもできる限りパクる。<br>
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
