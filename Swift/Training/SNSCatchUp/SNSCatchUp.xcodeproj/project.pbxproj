@@ -27,6 +27,7 @@
 		82CC09061F9C45F000DC88E6 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		82CC09091FA2204600DC88E6 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		82CC090A1FA37A5000DC88E6 /* SNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSViewController.swift; sourceTree = "<group>"; };
+		82CC090C1FA5EBD800DC88E6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		82CC09081FA2204600DC88E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82CC090C1FA5EBD800DC88E6 /* Social.framework */,
 				82CC09091FA2204600DC88E6 /* CoreImage.framework */,
 			);
 			name = Frameworks;
