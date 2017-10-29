@@ -29,7 +29,35 @@ class SNSViewController: UIViewController {
     }
     
     @IBAction func shareSNS(_ sender: Any) {
+        let alertController = UIAlertController(title: "SNSへ投稿",
+                                                message: "投稿する場所を選択してください。",
+                                                preferredStyle: .actionSheet)
         
+        let cancelAction:UIAlertAction = UIAlertAction(title: "Cancel",
+                                                       style: UIAlertActionStyle.cancel,
+                                                       handler:{
+                                                        (action:UIAlertAction!) -> Void in
+                                                        
+                                                        //キャンセルボタンの処理
+        })
+        
+        let facebookAction:UIAlertAction = UIAlertAction(title: "Facebook",
+                                                         style: UIAlertActionStyle.default,
+                                                         handler:{
+                                                            (action:UIAlertAction!) -> Void in
+                                                                                            self.postFacebook()
+        })
+        
+        let twitterAction:UIAlertAction = UIAlertAction(title: "twitter",
+                                                         style: UIAlertActionStyle.default,
+                                                         handler:{
+                                                            (action:UIAlertAction!) -> Void in
+                                                            self.postTwitter()
+        })
+        alertController.addAction(facebookAction)
+        alertController.addAction(twitterAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     //twitterに投稿
