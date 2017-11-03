@@ -181,7 +181,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Up6-UQ-QQ2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="50i-sC-rub"/>
+                    <navigationItem key="navigationItem" id="50i-sC-rub">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="qMz-6t-R3p"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="endImageView" destination="Vdj-Jf-DuM" id="zNf-zu-RF2"/>
                         <outlet property="textView" destination="xRm-tB-SnX" id="D7D-kd-UKZ"/>
