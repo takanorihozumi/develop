@@ -23,6 +23,12 @@ class SettingViewController: UIViewController ,UIImagePickerControllerDelegate, 
         
         vc.frame = CGRect(x: 0, y: 0, width: 800, height: 80)
         
+        setScrollView()
+        checkAllowCamera()
+
+    }
+    
+    func setScrollView(){
         for i in 0..<10{
             let button:UIButton = UIButton()
             button.tag = i
@@ -36,8 +42,11 @@ class SettingViewController: UIViewController ,UIImagePickerControllerDelegate, 
         //scrollViewにつける
         sv.addSubview(vc)
         sv.contentSize = vc.bounds.size
+    }
+    
+    //ユーザーにカメラの使用許可をだす
+    func checkAllowCamera(){
         
-        //ユーザーにカメラの使用許可をだす
         PHPhotoLibrary.requestAuthorization { (status) in
             
             switch(status){
