@@ -7,8 +7,8 @@
 
       <hr>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-              <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path,class:"btn btn-facebook" %>
-              <hr>
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path,class:"btn btn-facebook" %>
+      <hr>
       <div class="form-group">
         <%= f.label :email %><br />
         <%= f.email_field :email,class:"form-control", placeholder:"email", autofocus: true %>
