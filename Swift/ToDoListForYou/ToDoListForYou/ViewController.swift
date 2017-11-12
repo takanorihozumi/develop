@@ -47,22 +47,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             titleArray = UserDefaults.standard.object(forKey: "array") as! [String]
             
         }
+
+        getSettingImage()
+        
+        tableView.reloadData()
+        
+    }
+    
+    func getSettingImage(){
         //画像を取得
         if (isAlbumImage){
             if UserDefaults.standard.object(forKey: "imageDate") != nil{
                 let imageDate:NSData = UserDefaults.standard.object(forKey: "imageData") as! NSData
                 backImageView.image = UIImage(data:imageDate as Data)
             }
-           
+            
         }else{
             if UserDefaults.standard.object(forKey: "image") != nil {
                 let numberString = UserDefaults.standard.object(forKey: "image")
                 backImageView.image = UIImage(named: numberString as! String + ".jpg")
             }
         }
-        
-        tableView.reloadData()
-        
     }
     
     //textfieldでreturn keyが押されえた場合の処理を書くdelegate method

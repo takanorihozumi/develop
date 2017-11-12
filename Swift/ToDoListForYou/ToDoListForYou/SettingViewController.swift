@@ -122,15 +122,5 @@ class SettingViewController: UIViewController ,UIImagePickerControllerDelegate, 
         UserDefaults.standard.set(UIImageJPEGRepresentation(image, 0.8), forKey: "imageData")
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

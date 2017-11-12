@@ -26,6 +26,11 @@ class NextViewController: UIViewController, UITextViewDelegate,UIDocumentInterac
         textView.delegate = self
         dateTextField.delegate = self
         
+        initialiseDateField()
+
+    }
+    
+    func initialiseDateField(){
         let datePicker = UIDatePicker()
         
         // ②日本の日付表示形式にする
