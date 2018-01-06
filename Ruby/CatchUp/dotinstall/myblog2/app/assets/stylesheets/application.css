@@ -26,3 +26,6 @@
 	font-weight: normal;
 	float: right;
 }
+.error {
+	color: red;
+}
