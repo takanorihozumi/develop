@@ -1,0 +1,7 @@
+<h2>hoz</h2>
+	<%= link_to 'Add new', new_post_path, class: 'header-menu' %>
+<ul>
+<% @posts.each do |post|%>
+<%= link_to post.title, post_path(post) %>
+<% end %>
+</ul>
