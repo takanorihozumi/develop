@@ -1,6 +1,4 @@
-
-<div class="jumbotron">
-	<nav class="navbar navbar-default">
+  <nav class="navbar navbar-device">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -30,9 +28,41 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  <div>
-    <h1 class="display-3" color="white">感想を共有しよう</h1>
-    <p class="sub-title">ドラマを観て感じた感動も、興奮も</p>
-    <p class="sub-title">mitanoで同じエピソードを隣で観ているかのように語り合おう</p> 
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+     <h2>アカウント作成</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email,:class => 'form-control',:placeholder => "email", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字以上)</em>
+      <% end %><br />
+      <%= f.password_field :password,:class => 'form-control',:placeholder => "password", autocomplete: "off" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation,:class => 'form-control',:placeholder => "password_confirmation", autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" ,class: "btn btn-success" %>
+    </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>       
+      </div>
+    </div>
+
   </div>
-</div>
+
