@@ -38,9 +38,15 @@
 }
 
 .container {
-    background-image:url(sora.jpg);
+    background-image:url(start.jpg);
+    color: white;
+    height: 450px;
 }
 
+.container-login {
+    background-image:url(start.jpg);
+    color: white;
+}
 .navbar-default {
     background: transparent;
     border-color: transparent;
