@@ -99,3 +99,25 @@ body {
     color: #fff;
     background-color: #4c66a4;
 }
+
+@media (min-width: 992px){
+.profile-full {
+        width: 100%;
+    }    
+}   
+
+.row-space-1 {
+  margin-bottom: 10px;
+}
+
+.row-space-2 {
+  margin-bottom: 15px;
+}
+
+.row-space-3 {
+  margin-bottom: 20px;
+}
+
+.row-space-4 {
+  margin-bottom: 25px;
+}
