@@ -1,5 +1,23 @@
 <%= render 'partial/navbar' %>
 
+<!-- 認証チェックマーク -->
+<!-- 空欄ではない場合にclasを追加 -->
+<script type="text/javascript">
+  $(function(){
+    <% if !@user.email.blank? %>
+      $("#ver-email").attr('class','vertification-checked');
+    <% end %>
+
+    <% if !@user.phone_number.blank? %>
+      $("#ver-tel").attr('class','vertification-checked');
+    <% end %>
+
+    <% if @user.provider == "facebook" %>
+      $("#ver-facebook").attr('class','vertification-checked');
+    <% end %>
+  });
+</script>
+
 <div class="container2">
   <div class="row">
     <div class="col-lg-3 col-md-4">
@@ -29,6 +47,8 @@
 
     <div class="col-lg-9 col-md-8 col-sm-12">
       <h1>ikeike app!!</h1>
+      <p>自己紹介</p>
+      <%= @user.description %>
     </div>
   </div>    
 </div>

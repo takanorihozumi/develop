@@ -44,13 +44,17 @@
     height: 450px;
 }
 
+.navbar {
+    background: #fff;
+}
+
 .container-login {
     background-image:url(start.jpg);
     color: white;
 }
 .navbar-default {
-    background: transparent;
-    border-color: transparent;
+background-color: black;
+border-color: #3e6962;
     z-index: 10;
 }
 
@@ -64,7 +68,7 @@
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
+    background-color: black;
 }
 
 //navbar-deviseのcss
@@ -82,6 +86,7 @@
 .navbar-devise .navbar-brand {
     color: #222222;
 }
+
 
 // トップページのnavbarのドロップダウンがクリックされた時
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -120,4 +125,20 @@ body {
 
 .row-space-4 {
   margin-bottom: 25px;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.vertification-checked:before{
+  content: "\f00c";
+  font-family: FontAwesome;
+  position: relative;
+  z-index: 100;
+  top:2px;
+  font-size: 1.55em;
+  text-align: center;
+  width: 1.25em;
+  color: #00d1c1;
 }
