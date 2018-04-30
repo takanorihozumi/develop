@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "toastr";
 
 .jumbotron {
     padding-top: 0px;
@@ -44,17 +43,13 @@
     height: 450px;
 }
 
-.navbar {
-    background: #fff;
-}
-
 .container-login {
     background-image:url(start.jpg);
     color: white;
 }
 .navbar-default {
-background-color: black;
-border-color: #3e6962;
+    background: transparent;
+    border-color: transparent;
     z-index: 10;
 }
 
@@ -68,7 +63,7 @@ border-color: #3e6962;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: black;
+    background-color: #fff;
 }
 
 //navbar-deviseのcss
@@ -87,62 +82,7 @@ border-color: #3e6962;
     color: #222222;
 }
 
-
-// トップページのnavbarのドロップダウンがクリックされた時
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: transparent;
-    color: #555;
-}
-
 body {
     color: #222;
     background-color: #F8F8F8;
-}
-
-//facebookボタン
-.btn-facebook {
-    color: #fff;
-    background-color: #4c66a4;
-}
-
-@media (min-width: 992px){
-.profile-full {
-        width: 100%;
-    }    
-}   
-.profile-0 {
-    width: 28px;
-    height: 28px;
-}
-
-.row-space-1 {
-  margin-bottom: 10px;
-}
-
-.row-space-2 {
-  margin-bottom: 15px;
-}
-
-.row-space-3 {
-  margin-bottom: 20px;
-}
-
-.row-space-4 {
-  margin-bottom: 25px;
-}
-
-.btn-full {
-    width: 100%;
-}
-
-.vertification-checked:before{
-  content: "\f00c";
-  font-family: FontAwesome;
-  position: relative;
-  z-index: 100;
-  top:2px;
-  font-size: 1.55em;
-  text-align: center;
-  width: 1.25em;
-  color: #00d1c1;
 }

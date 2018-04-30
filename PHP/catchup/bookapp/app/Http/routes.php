@@ -1,5 +1,8 @@
 <?php
 
+use App\Book;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,7 +13,23 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::group(['middleware' => ['web']], function(){
+  Route::get('/', function(){
+    $books = Book::all();
+    return view('books', [
+        'books' => $books
+      ]);
+  });
 
-Route::get('/', function () {
-    return view('welcome');
+  Route::post('/book',function(Request $request){
+    //
+  });
+
+  Route::delete('/book/{book}',function(Book $book){
+
+  });
 });
+
+// Route::get('/', function () {
+//     return view('books');
+// });

@@ -1,11 +1,7 @@
-Rails.application.routes.draw do  
-  resources :impressions
+Rails.application.routes.draw do
+  devise_for :users
+  root 'pages#index'
+  # get 'pages/index'
 
-  root :to => 'pages#index'
-
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",:registrations => 'registrations' }
-
-  resources :users, only: [:show]
-
-  get 'manage-impression/:id/basics' => 'impressions#basics', as: 'manage_impression_basics'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
