@@ -7,8 +7,6 @@ trainingフォルダに<br>
 
 そして、複数のアプリに学んだ機能を適用しまくっていきます。<br>
 
-備忘として以下のblogも随時更新<br>
-http://takanori5.hatenablog.com/
 
 以下は、あまり関係ないですが、、<br>
 Mynaverまとめオススメ記事<br>
